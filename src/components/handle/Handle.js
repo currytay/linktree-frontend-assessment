@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { theme } from '../../data/mock-theme';
 
 const Handle = () => {
 
@@ -12,7 +13,7 @@ const HandleText = styled.h1`
   font-size: 1rem;
   line-height: 1.75rem;
   margin: 0;
-  // add color styles
+  color: ${theme.fg};
 `;
 
 export default Handle;
