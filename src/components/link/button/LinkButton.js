@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { invertedTheme, theme } from '../../../data/mock-theme';
 
-const LinkButton = ({ label }) => {
+const LinkButton = ({ handleClick, label }) => {
 
   return (
-    <ButtonElement>{label}</ButtonElement>
+    <ButtonElement onClick={() => handleClick()}>
+      {label}
+    </ButtonElement>
   );
 };
 
@@ -22,6 +24,7 @@ const ButtonElement = styled.button`
   line-height: 1.5rem;
   font-family: 'Karla';
   font-size: .875rem;
+  cursor: pointer;
   transition: .25s all ease;
 
   :hover {
