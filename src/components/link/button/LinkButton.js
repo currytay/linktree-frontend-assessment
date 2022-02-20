@@ -28,4 +28,4 @@ const LinkButton = styled.button`
   }
 `;
 
-export default ShowsLink;
+export default LinkButton;
