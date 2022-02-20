@@ -8,6 +8,9 @@ const App = () => {
     <AppContainer>
       <ProfileContainer>
         <Header />
+        <LinksContainer>
+          
+        </LinksContainer>
       </ProfileContainer>
     </AppContainer>
   );
@@ -25,6 +28,13 @@ const ProfileContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 2rem 1.5rem;
+`;
+
+const LinksContainer = styled.div`
+  width: 100%;  
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5rem;
 `;
 
 export default App;
