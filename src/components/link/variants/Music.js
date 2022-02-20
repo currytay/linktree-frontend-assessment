@@ -77,9 +77,17 @@ const ServiceContainer = styled.div`
   flex-direction: row;
   align-items: center;
   padding: .625rem 0;
+  position: relative;
 
-  :not(:last-child) {
-    border-bottom: 1px solid #DADEE0;
+  :not(:last-child):after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: .0625rem;
+    background: #DADEE0;
+    width: calc(100% - 1.5rem);
+    left: 2.5rem;
+    bottom: 0;  
   }
 `;
 
