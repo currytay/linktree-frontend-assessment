@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Header } from './components/header';
 
 const App = () => {
 
   return (
     <AppContainer>
       <ProfileContainer>
-
+        <Header />
       </ProfileContainer>
     </AppContainer>
   );
