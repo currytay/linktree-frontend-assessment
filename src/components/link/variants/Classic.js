@@ -19,7 +19,7 @@ const ClassicLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: .15s all ease;
+  transition: .25s all ease;
 
   :hover {
     background-color: ${invertedTheme.bg};
