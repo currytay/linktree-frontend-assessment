@@ -1,8 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Header } from './components/header';
+import * as service from './data/mock-data';
 
 const App = () => {
+
+  const [profileLinks, setProfileLinks] = useState([]);
+
+  const getLinks = () => {
+    service.fetchData()
+      .then(links => setProfileLinks(links))
+      .catch(error => console.log(error));
+  }
+
+  useEffect(() => {
+    getLinks();
+  }, [])
 
   return (
     <AppContainer>
