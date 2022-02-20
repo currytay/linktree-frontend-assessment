@@ -22,7 +22,11 @@ const App = () => {
       <ProfileContainer>
         <Header />
         <LinksContainer>
-          
+          {profileLinks.map((link, index) => {
+            return (
+              <p>{link.label}</p>
+            );
+          })}
         </LinksContainer>
       </ProfileContainer>
     </AppContainer>
