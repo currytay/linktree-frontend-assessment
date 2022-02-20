@@ -14,7 +14,6 @@ const ClassicLink = styled.a`
   width: inherit;
   background-color: ${theme.bg};
   color: ${theme.fg};
-  border: 2px solid ${theme.bg};
   border-radius: .25rem;
   padding: .75rem 1rem;
   display: flex;
