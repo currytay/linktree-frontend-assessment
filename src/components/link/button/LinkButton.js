@@ -13,6 +13,7 @@ const ButtonElement = styled.button`
   width: inherit;
   background-color: ${theme.bg};
   color: ${theme.fg};
+  border: none;
   border-radius: .25rem;
   padding: .75rem 1rem;
   display: flex;
