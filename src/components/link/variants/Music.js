@@ -85,6 +85,8 @@ const ServiceContainer = styled.div`
 
 const StreamingLink = styled.a`
   margin-right: 1rem;
+  display: flex;
+  align-items: center;
 `;
 
 const StreamingLogo = styled.img`
@@ -100,6 +102,7 @@ const StreamingButton = styled.button`
   justify-content: space-between;
   border: none;
   background-color: transparent;
+  padding: 0;
   cursor: pointer;
 `;
 
