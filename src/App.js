@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Header } from './components/header';
+import { Link } from './components/link';
 import * as service from './data/mock-data';
 
 const App = () => {
@@ -24,7 +25,14 @@ const App = () => {
         <LinksContainer>
           {profileLinks.map((link, index) => {
             return (
-              <p>{link.label}</p>
+              <Link
+                key={index} 
+                variant={link.variant} 
+                label={link.label}
+                link={link.link}
+                music={link.music}
+                shows={link.shows}
+              />
             );
           })}
         </LinksContainer>
