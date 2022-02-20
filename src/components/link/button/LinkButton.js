@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { invertedTheme, theme } from '../../../data/mock-theme';
 
 const LinkButton = ({ label }) => {
 
   return (
-    <LinkButton>{label}</LinkButton>
+    <ButtonElement>{label}</ButtonElement>
   );
 };
 
-const LinkButton = styled.button`
+const ButtonElement = styled.button`
   width: inherit;
   background-color: ${theme.bg};
   color: ${theme.fg};
