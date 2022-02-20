@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot renders 1`] = `
+<div
+  className="sc-bBHxTw erjYgj"
+>
+  <div
+    className="sc-iwjdpV fxldqT"
+  >
+    <div
+      className="sc-dkPtRN ciIKFR"
+    >
+      <img
+        alt="User profile avatar"
+        className="sc-bdvvtL kaSKQS"
+        src="profile-picture.png"
+      />
+      <h1
+        className="sc-gsDKAQ dABKQ"
+      >
+        @yourname
+      </h1>
+    </div>
+    <div
+      className="sc-cxpSdN dqjbpH"
+    />
+    <div
+      className="sc-llYSUQ iQJvvR"
+    >
+      <img
+        alt="Linktree logo"
+        src="logo.svg"
+      />
+    </div>
+  </div>
+</div>
+`;
