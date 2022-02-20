@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Header } from './components/header';
 import { Link } from './components/link';
 import * as service from './data/mock-data';
+import LinktreeLogo from './assets/logo.svg';
 
 const App = () => {
 
@@ -36,6 +37,9 @@ const App = () => {
             );
           })}
         </LinksContainer>
+        <LogoContainer>
+          <img src={LinktreeLogo} alt='Linktree logo' />
+        </LogoContainer>
       </ProfileContainer>
     </AppContainer>
   );
@@ -43,10 +47,12 @@ const App = () => {
 
 const AppContainer = styled.div`
   width: 100%;
+  min-height: 100vh;
 `;
 
 const ProfileContainer = styled.div`
   width: 100%;
+  min-height: 100vh;
   max-width: 42.5rem;
   margin: 0 auto;
   display: flex;
@@ -60,6 +66,14 @@ const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 5rem;
+  flex: 1 0 auto;
+`;
+
+const LogoContainer = styled.div`
+  width: 100%;  
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
 `;
 
 export default App;
