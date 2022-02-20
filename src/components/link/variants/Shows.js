@@ -50,11 +50,11 @@ const ShowsContainer = styled.div`
 
 const ContentContainer = styled.div`
   width: inherit;
-  padding: 0 1rem;
+  padding: 0 0 0 1rem;
 `;
 
 const EventContainer = styled.div`
-  padding: .625rem 0;
+  padding: .625rem 1rem .625rem 0;
   border-bottom: 1px solid #DADEE0;
 `;
 
@@ -82,7 +82,7 @@ const Arrow = styled.img`
 `;
 
 const LogoContainer = styled.div`
-  padding: 1rem 0;
+  padding: 1rem 1rem 1rem 0;
   display: flex;
   justify-content: center;
 `;
