@@ -37,7 +37,8 @@ const Music = ({ label, link, music, shows, variant }) => {
         {displayLinks && displayPlayer && (
           <PlayerContainer>
             <PlayerArt src={AlbumArt} alt='Album artwork' />
-            <img src={PlayIcon} alt='Play button' />            
+            <img src={PlayIcon} alt='Play button' />
+            <ProgressBar />            
           </PlayerContainer>
         )}
         {displayLinks && music.map((availableService, index) => {
@@ -116,11 +117,21 @@ const Arrow = styled.img`
 
 const PlayerContainer = styled.div`
   width: 100%;
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: .625rem 0 1rem 0;
   border-bottom: 2px solid #DADEE0;
+`;
+
+const ProgressBar = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: -.125rem; 
+  height: .125rem;
+  width: 40%;
+  background-color: ${theme.bg};
 `;
 
 const PlayerArt = styled.img`
