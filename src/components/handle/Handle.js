@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { theme } from '../../data/mock-theme';
 
 const Handle = () => {
-
   return (
     <HandleText>@yourname</HandleText>
   );

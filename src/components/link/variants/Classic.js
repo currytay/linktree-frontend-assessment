@@ -4,13 +4,13 @@ import { invertedTheme, theme } from '../../../data/mock-theme';
 
 const Classic = ({ label, link, music, shows, variant }) => {
   return (
-    <ClassicLink href={link} target='_blank'>
+    <LinkElement href={link} target='_blank'>
       <LinkText>{label}</LinkText>
-    </ClassicLink>
+    </LinkElement>
   );
 };
 
-const ClassicLink = styled.a`
+const LinkElement = styled.a`
   width: inherit;
   background-color: ${theme.bg};
   color: ${theme.fg};

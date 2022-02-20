@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import AvatarImage from '../../assets/profile-picture.png';
 
 const Avatar = () => {
-
   return (
     <AvatarElement src={AvatarImage} alt='User profile avatar' />
   );

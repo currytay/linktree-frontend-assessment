@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { invertedTheme, theme } from '../../../data/mock-theme';
+import { theme } from '../../../data/mock-theme';
 import { LinkButton } from '../button';
 import SpotifyLogo from '../../../assets/icons/spotify.svg';
 import AppleLogo from '../../../assets/icons/apple-music.svg';
@@ -10,7 +10,7 @@ import ArrowIcon from '../../../assets/icons/arrow.svg';
 import PlayIcon from '../../../assets/icons/play.svg';
 import AlbumArt from '../../../assets/img/Rectangle.png';
 
-const IconVariants = {
+const LogoVariants = {
   spotify: SpotifyLogo,
   apple: AppleLogo,
   soundcloud: SoundcloudLogo,
@@ -18,7 +18,6 @@ const IconVariants = {
 };
 
 const Music = ({ label, link, music, shows, variant }) => {
-
   const [displayLinks, setDisplayLinks] = useState(false);
   const [displayPlayer, setDisplayPlayer] = useState(false);
 
@@ -33,28 +32,32 @@ const Music = ({ label, link, music, shows, variant }) => {
   return (
     <MusicContainer>
       <LinkButton handleClick={handleClick} label={label} />
-      <ContentContainer>
+      <ListContainer>
         {displayLinks && displayPlayer && (
           <PlayerContainer>
             <PlayerArt src={AlbumArt} alt='Album artwork' />
             <img src={PlayIcon} alt='Play button' />
-            <ProgressBar />            
+            <ProgressBar />
           </PlayerContainer>
         )}
-        {displayLinks && music.map((availableService, index) => {
-          return (
-            <ServiceContainer key={index}>
-              <StreamingLink href={availableService.link} target='_blank'>
-                <StreamingLogo src={IconVariants[availableService.icon]} alt={`${availableService.name} logo`} />
-              </StreamingLink>
-              <StreamingButton onClick={() => playSong()}>
-                <ServiceText>{availableService.service}</ServiceText>
-                <Arrow src={ArrowIcon} alt='Arrow icon' />
-              </StreamingButton>
-            </ServiceContainer>
-          );
-        })}
-      </ContentContainer>
+        {displayLinks &&
+          music.map((platform, index) => {
+            return (
+              <StreamingPlatformContainer key={index}>
+                <StreamingLink href={platform.link} target='_blank'>
+                  <StreamingLogo
+                    src={LogoVariants[platform.icon]}
+                    alt={`${platform.name} logo`}
+                  />
+                </StreamingLink>
+                <StreamingPlayerButton onClick={() => playSong()}>
+                  <PlatformText>{platform.service}</PlatformText>
+                  <Arrow src={ArrowIcon} alt='Arrow icon' />
+                </StreamingPlayerButton>
+              </StreamingPlatformContainer>
+            );
+          })}
+      </ListContainer>
     </MusicContainer>
   );
 };
@@ -67,12 +70,12 @@ const MusicContainer = styled.div`
   border-radius: .25rem;
 `;
 
-const ContentContainer = styled.div`
+const ListContainer = styled.div`
   width: inherit;
   padding: 0 1rem;
 `;
 
-const ServiceContainer = styled.div`
+const StreamingPlatformContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,7 +105,7 @@ const StreamingLogo = styled.img`
   stroke: red;
 `;
 
-const StreamingButton = styled.button`
+const StreamingPlayerButton = styled.button`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -114,7 +117,7 @@ const StreamingButton = styled.button`
   cursor: pointer;
 `;
 
-const ServiceText = styled.p`
+const PlatformText = styled.p`
   font-family: 'Karla';
   font-size: 1rem;
   line-height: 1.75rem;

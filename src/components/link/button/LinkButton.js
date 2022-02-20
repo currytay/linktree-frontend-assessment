@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { invertedTheme, theme } from '../../../data/mock-theme';
 
 const LinkButton = ({ handleClick, label }) => {
-
   return (
     <ButtonElement onClick={() => handleClick()}>
       {label}

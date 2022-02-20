@@ -4,7 +4,6 @@ import { Avatar } from '../avatar';
 import { Handle } from '../handle';
 
 const Header = () => {
-
   return (
     <HeaderContainer>
       <Avatar />

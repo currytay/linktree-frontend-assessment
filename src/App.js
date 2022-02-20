@@ -6,11 +6,11 @@ import * as service from './data/mock-data';
 import LinktreeLogo from './assets/logo.svg';
 
 const App = () => {
-
   const [profileLinks, setProfileLinks] = useState([]);
 
   const getLinks = () => {
-    service.fetchData()
+    service
+      .fetchData()
       .then(links => setProfileLinks(links))
       .catch(error => console.log(error));
   }

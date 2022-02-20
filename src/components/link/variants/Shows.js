@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { invertedTheme, theme } from '../../../data/mock-theme';
+import { theme } from '../../../data/mock-theme';
 import { LinkButton } from '../button';
 import ArrowIcon from '../../../assets/icons/arrow.svg';
 import SongkickLogo from '../../../assets/icons/by-songkick-wordmark.svg';
 
 const Shows = ({ label, link, music, shows, variant }) => {
-
   const [displayEvents, setDisplayEvents] = useState(false);
 
   const handleClick = () => {
@@ -16,26 +15,31 @@ const Shows = ({ label, link, music, shows, variant }) => {
   return (
     <ShowsContainer>
       <LinkButton handleClick={handleClick} label={label} />
-      <ContentContainer>
-        {displayEvents && shows.map((show, index) => {
-          return (
-            <EventContainer key={index}>
-              <EventLink href={show.link} target='_blank'>
-                <EventInfoContainer>
-                  <EventText primary={true}>{show.date}</EventText>
-                  <EventText primary={false}>{show.location}</EventText>
-                </EventInfoContainer>
-                {show.soldOut ? <EventText primary={false}>Sold Out</EventText> : <Arrow src={ArrowIcon} alt='Arrow icon' />}
-              </EventLink>
-            </EventContainer>
-          );
-        })}
+      <ListContainer>
+        {displayEvents &&
+          shows.map((show, index) => {
+            return (
+              <EventContainer key={index}>
+                <EventLink href={show.link} target='_blank'>
+                  <EventInfoContainer>
+                    <EventText primary={true}>{show.date}</EventText>
+                    <EventText primary={false}>{show.location}</EventText>
+                  </EventInfoContainer>
+                  {show.soldOut ? (
+                    <EventText primary={false}>Sold Out</EventText>
+                  ) : (
+                    <Arrow src={ArrowIcon} alt='Arrow icon' />
+                  )}
+                </EventLink>
+              </EventContainer>
+            );
+          })}
         {displayEvents && (
           <LogoContainer>
             <Logo src={SongkickLogo} alt='Songkick logo' />
           </LogoContainer>
         )}
-      </ContentContainer>
+      </ListContainer>
     </ShowsContainer>
   );
 };
@@ -48,7 +52,7 @@ const ShowsContainer = styled.div`
   border-radius: .25rem;
 `;
 
-const ContentContainer = styled.div`
+const ListContainer = styled.div`
   width: inherit;
   padding: 0 0 0 1rem;
 `;
