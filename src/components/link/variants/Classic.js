@@ -30,6 +30,7 @@ const ClassicLink = styled.a`
 const LinkText = styled.p`
   width: inherit;
   color: inherit;
+  font-size: .875rem;
   line-height: 1.5rem;
   margin: 0;
   text-align: center;
